@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WellSoftware | Aplicaciones para el bienestar</title>
-  <meta name="description" content="WellSoftware desarrolla aplicaciones enfocadas en mejorar el bienestar personal y promover hábitos de vida saludables a través de la tecnología.">
-  <link rel="icon" href="https://wellsoftware-ws.github.io/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WellSoftware | Apps for Wellbeing</title>
+  <meta name="description" content="WellSoftware develops apps focused on wellbeing, mindfulness, and healthy living through responsible technology." />
+  <link rel="icon" href="https://wellsoftware-ws.github.io/favicon.ico" />
   <style>
     body {
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -25,11 +25,14 @@
     header h1 {
       margin: 0;
       font-size: 2rem;
-      letter-spacing: 0.5px;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
     }
     main {
       flex: 1;
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       background: white;
       padding: 2rem;
@@ -39,6 +42,11 @@
     h2 {
       color: #0066cc;
       margin-top: 0;
+    }
+    img.hero {
+      width: 100%;
+      border-radius: 12px;
+      margin: 1.5rem 0;
     }
     footer {
       text-align: center;
@@ -53,33 +61,79 @@
     a:hover {
       text-decoration: underline;
     }
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+    .lang-switch button {
+      background: none;
+      border: none;
+      color: #0066cc;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-left: 0.5rem;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>WellSoftware</h1>
-    <p>Desarrollo de aplicaciones para el bienestar y la vida saludable</p>
+    <p>Apps that promote wellbeing and healthy living</p>
   </header>
 
   <main>
-    <h2>Quiénes somos</h2>
-    <p><strong>WellSoftware</strong> es una organización dedicada al desarrollo de aplicaciones móviles orientadas a promover el bienestar personal, el equilibrio emocional y la adopción de hábitos saludables.</p>
+    <div class="lang-switch">
+      <span id="lang-label">Language:</span>
+      <button onclick="setLanguage('en')">English</button>|
+      <button onclick="setLanguage('es')">Español</button>
+    </div>
 
-    <p>Nuestro objetivo es combinar la tecnología con el diseño consciente para ofrecer herramientas digitales que ayuden a las personas a mejorar su calidad de vida de manera accesible y responsable.</p>
+    <img class="hero" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80" alt="Ocean and calm landscape representing wellbeing" />
 
-    <h2>Nuestra filosofía</h2>
-    <p>Creemos que la innovación tecnológica puede ser una aliada del bienestar. Por eso, trabajamos con un enfoque ético y centrado en el usuario, creando soluciones que fomentan la calma, la reflexión y el equilibrio en el día a día.</p>
+    <div id="content-en">
+      <h2>About Us</h2>
+      <p><strong>WellSoftware</strong> is an organization dedicated to developing mobile applications designed to support wellbeing, mindfulness, and balanced lifestyles through technology.</p>
 
-    <h2>Contacto</h2>
-    <p>Si deseas más información o colaborar con nosotros, puedes escribirnos a:  
-      <a href="mailto:wellsoftware.ws@gmail.com">wellsoftware.ws@gmail.com</a>
-    </p>
+      <p>We believe technology can help people live more consciously and harmoniously. Our mission is to design accessible, responsible, and user-centered digital tools that inspire healthier habits and emotional balance.</p>
 
-    <p>Consulta nuestra <a href="https://wellsoftware-ws.github.io/breather-privacy-policy/">política de privacidad</a>.</p>
+      <h2>Our Vision</h2>
+      <p>We focus on innovation that enhances quality of life. Our goal is to create digital experiences that promote calm, self-awareness, and positive daily routines.</p>
+
+      <h2>Contact</h2>
+      <p>For inquiries or collaborations, please contact us at:  
+        <a href="mailto:devplatform.app@gmail.com">devplatform.app@gmail.com</a>
+      </p>
+
+      <p>Read our <a href="https://wellsoftware-ws.github.io/breather-privacy-policy/">Privacy Policy</a>.</p>
+    </div>
+
+    <div id="content-es" style="display:none;">
+      <h2>Quiénes somos</h2>
+      <p><strong>WellSoftware</strong> es una organización dedicada al desarrollo de aplicaciones móviles orientadas a fomentar el bienestar, la atención plena y los hábitos de vida equilibrados mediante el uso responsable de la tecnología.</p>
+
+      <p>Creemos que la tecnología puede ayudar a las personas a vivir de manera más consciente y armoniosa. Nuestra misión es ofrecer herramientas digitales accesibles y centradas en el usuario que inspiren hábitos saludables y equilibrio emocional.</p>
+
+      <h2>Nuestra visión</h2>
+      <p>Nos enfocamos en la innovación que mejora la calidad de vida. Nuestro objetivo es crear experiencias digitales que promuevan la calma, la autoconciencia y rutinas diarias positivas.</p>
+
+      <h2>Contacto</h2>
+      <p>Para consultas o colaboraciones, contáctanos en:  
+        <a href="mailto:devplatform.app@gmail.com">devplatform.app@gmail.com</a>
+      </p>
+
+      <p>Consulta nuestra <a href="https://wellsoftware-ws.github.io/breather-privacy-policy/">Política de privacidad</a>.</p>
+    </div>
   </main>
 
   <footer>
-    © 2025 WellSoftware. Todos los derechos reservados.
+    © 2025 WellSoftware. All rights reserved.
   </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.getElementById('content-en').style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById('content-es').style.display = (lang === 'es') ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
